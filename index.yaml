@@ -1,7 +1,6 @@
 ---
 name: A sample course
 description: This is a sample course for testing and studying the grader.
-public_directory: public
 
 # The course default language which may be overridden with ?lang=xx.
 # Currently internal mooc-grader exercise messages support en and fi.
@@ -21,6 +20,9 @@ contact: teemu.t.lehtinen@aalto.fi
 assistants:
   - 47983K # Teemu Lehtinen
 
+# The public course files to serve as /static/course_key/
+static_dir: static
+
 # Course schedule and content for A+.
 start: 2015-01-01
 end: 2055-01-01
@@ -32,7 +34,7 @@ modules:
     chapters:
       - name: Introduction
         url_slug: "intro"
-        public_content: intro.html
+        static_content: intro.html
     exercises:
       - key: multiple_choice
         config: exercises/multiple_choice.yaml
