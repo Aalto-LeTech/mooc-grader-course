@@ -26,7 +26,7 @@ max_points: 5
 actions:
   - type: grader.actions.prepare
     charset: UTF-8
-    cp_exercises: HelloScalaTest.scala->user/HelloScalaTest.scala
+    cp_exercises: exercises/hello_scala->user
     expect_success: True
   - title: Compiling
     type: grader.actions.sandbox

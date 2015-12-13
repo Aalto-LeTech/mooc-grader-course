@@ -1,6 +1,7 @@
 ---
 name: A sample course
 description: This is a sample course for testing and studying the grader.
+public_directory: public
 
 # The course default language which may be overridden with ?lang=xx.
 # Currently internal mooc-grader exercise messages support en and fi.
@@ -25,23 +26,6 @@ start: 2015-01-01
 end: 2055-01-01
 modules:
 
-  - name: Sample exercises
-    introduction: This round presents a set of different sample exercises.
-    url_slug: exercises
-    type: normal
-    points_to_pass: 100
-    exercises:
-      - config: hello_python
-        type: programming
-      - config: hello_git
-        type: programming
-      - config: correct_button
-        type: questionnaire
-      - config: template
-        type: programming
-        title: Override Title
-        max_points: 30
-
   - name: Sample chapters
     url_slug: study
     type: normal
@@ -50,10 +34,33 @@ modules:
         url_slug: "intro"
         public_content: intro.html
     exercises:
-      - config: multiple_choice
+      - key: multiple_choice
+        config: exercises/multiple_choice.yaml
         type: questionnaire
-      - config: hello_scala
+      - key: hello_python
+        config: exercises/hello_python/config.yaml
         type: programming
+
+  - name: Sample exercises
+    introduction: This round presents a set of different sample exercises.
+    url_slug: exercises
+    type: normal
+    points_to_pass: 100
+    exercises:
+      - key: hello_scala
+        config: exercises/hello_scala/config.yaml
+        type: programming
+      - key: correct_button
+        config: exercises/custom_post/config.yaml
+        type: questionnaire
+      - key: hello_git
+        config: exercises/hello_git.yaml
+        type: programming
+      - key: template
+        config: exercises/template.yaml
+        type: programming
+        title: Template Exercise # Override title for A+
+        max_points: 30
 
   - name: Errors for testing
     url_slug: errors
@@ -61,9 +68,11 @@ modules:
     open: 2015-09-01 12:00
     close: 2020-12-31 23:59
     exercises:
-      - config: error
+      - key: error
+        config: exercises/intentional_errors/error.yaml
         type: programming
-      - config: timeout
+      - key: timeout
+        config: exercises/intentional_errors/timeout.yaml
         type: programming
 
 # A+ exercise categories.
