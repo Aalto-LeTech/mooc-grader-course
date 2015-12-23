@@ -10,15 +10,12 @@ description: This is a sample course for testing and studying the grader.
 #   fi: Mallitehtävä
 lang: en
 
-# The identifier to use in the A+ URLs.
-url_slug: sample
-
 # Comma separated email addresses for technical support.
 contact: teemu.t.lehtinen@aalto.fi
 
 # Student IDs to grant course assistant access in A+.
 assistants:
-  - 47983K # Teemu Lehtinen
+  - NNNNNN
 
 # The public course files to serve as /static/course_key/
 static_dir: static
@@ -26,29 +23,32 @@ static_dir: static
 # Course schedule and content for A+.
 start: 2015-01-01
 end: 2055-01-01
+numerate_ignoring_module: False
 modules:
 
-  - name: Sample chapters
-    url_slug: study
+  - key: study
+    name: Sample chapters
     type: normal
-    chapters:
-      - name: Introduction
-        url_slug: "intro"
+    children:
+      - key: intro
+        name: Introduction
         static_content: intro.html
-    exercises:
-      - key: multiple_choice
-        config: exercises/multiple_choice.yaml
-        type: questionnaire
-      - key: hello_python
-        config: exercises/hello_python/config.yaml
-        type: programming
+        children:
+          - key: multiple_choice
+            config: exercises/multiple_choice.yaml
+            type: questionnaire
+            status: unlisted
+          - key: hello_python
+            config: exercises/hello_python/config.yaml
+            type: programming
+            status: unlisted
 
-  - name: Sample exercises
+  - key: exercises
+    name: Sample exercises
     introduction: This round presents a set of different sample exercises.
-    url_slug: exercises
     type: normal
     points_to_pass: 100
-    exercises:
+    children:
       - key: hello_scala
         config: exercises/hello_scala/config.yaml
         type: programming
@@ -64,12 +64,12 @@ modules:
         title: Template Exercise # Override title for A+
         max_points: 30
 
-  - name: Errors for testing
-    url_slug: errors
+  - key: errors
+    name: Errors for testing
     type: normal
     open: 2015-09-01 12:00
     close: 2020-12-31 23:59
-    exercises:
+    children:
       - key: error
         config: exercises/intentional_errors/error.yaml
         type: programming
