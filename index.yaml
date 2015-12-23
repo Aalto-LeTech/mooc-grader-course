@@ -15,7 +15,7 @@ contact: teemu.t.lehtinen@aalto.fi
 
 # Student IDs to grant course assistant access in A+.
 assistants:
-  - NNNNNN
+#  - NNNNNN
 
 # The public course files to serve as /static/course_key/
 static_dir: static
