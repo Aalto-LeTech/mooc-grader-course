@@ -14,7 +14,7 @@ lang: en
 contact: teemu.t.lehtinen@aalto.fi
 
 # Student IDs to grant course assistant access in A+.
-assistants:
+#assistants:
 #  - NNNNNN
 
 # The public course files to serve as /static/course_key/
@@ -23,7 +23,7 @@ static_dir: static
 # Course schedule and content for A+.
 start: 2015-01-01
 end: 2055-01-01
-numerate_ignoring_module: False
+#numerate_ignoring_modules: True
 modules:
 
   - key: study
@@ -33,6 +33,7 @@ modules:
       - key: intro
         name: Introduction
         static_content: intro.html
+        category: online
         children:
           - key: multiple_choice
             config: exercises/multiple_choice.yaml
