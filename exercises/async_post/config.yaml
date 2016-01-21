@@ -1,0 +1,33 @@
+---
+title: Asynchronous form grading
+description: Store POST values for asynchronous grading
+max_points: 10
+instructions: |
+
+  <h1>Asynchronous form grading</h1>
+  <p>
+    This exercise will store your post data to disk and
+    list it in a queued process.
+  </p>
+
+view_type: access.types.stdasync.acceptPost
+fields:
+  - name: part_a
+    title: Part A
+    required: True
+  - name: part_b
+    title: Part B
+    required: True
+
+actions:
+  - type: grader.actions.prepare
+    charset: UTF-8
+    expect_success: True
+  - title: List files
+    type: grader.actions.sandbox
+    cmd: [ "ls" ]
+    points: 5
+  - title: List contents
+    type: grader.actions.sandbox
+    cmd: [ "cat", "*" ]
+    points: 5

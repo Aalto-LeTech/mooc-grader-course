@@ -56,6 +56,9 @@ modules:
       - key: correct_button
         config: exercises/custom_post/config.yaml
         type: questionnaire
+      - key: async_post
+        config: exercises/async_post/config.yaml
+        type: programming
       - key: hello_git
         config: exercises/hello_git.yaml
         type: programming
@@ -64,6 +67,9 @@ modules:
         type: programming
         title: Template Exercise # Override title for A+
         max_points: 30
+      - key: ltitest
+        config: ltitest.yaml
+        type: programming
 
   - key: errors
     name: Errors for testing
