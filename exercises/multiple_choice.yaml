@@ -1,5 +1,5 @@
 ---
-title: Mutiple choices form
+title: Multiple choices form
 description: A demonstration of a graded questionnaire
 max_points: 7
 
@@ -15,9 +15,11 @@ fieldgroups:
         points: 2
         options:
           - label: 1
+            hint: Maby more?
           - label: 2
             correct: true
           - label: 3
+            hint: Maby less?
 
       - title: 2. <var>1 + 1 = ?</var>
         type: dropdown
@@ -38,14 +40,18 @@ fieldgroups:
         options:
           - label: banana
             correct: true
+            hint: All foods apply.
           - label: butter
             correct: true
+            hint: All foods apply.
           - label: sea
+            hint: Sea is not a river.
 
       - title: 4. Type <kbd>blue</kbd> below.
         type: text
         points: 1
         correct: blue
+        hint: Check exact spelling.
 
       - title: 5. Type some <code>code</code> including word "<samp>test</samp>".
         type: text
@@ -55,8 +61,11 @@ fieldgroups:
   - title: We don't care
     fields:
 
-      - title: You can select anything here without changing the grade.
+      - title: |
+          You can select anything here without changing the grade.
+          But you have to choose one.
         type: checkbox
+        required: true
         options:
           - label: A
           - label: B

@@ -1,0 +1,41 @@
+---
+title: Randomized multiple choices form
+description: Demonstrates picking random questions
+max_points: 3
+
+view_type: access.types.stdsync.createForm
+
+# To create large amount of options,
+# this structure could be programmatically generated
+# and saved as either yaml or json.
+
+fieldgroups:
+
+  - title: Convert decimal number to binary number
+    pick_randomly: 3
+    fields:
+      - title: 1
+        type: text
+        points: 1
+        regex: ^0*1$
+        hint: "Correct answer: 0001"
+      - title: 2
+        type: text
+        points: 1
+        regex: ^0*10$
+        hint: "Correct answer: 0010"
+      - title: 3
+        type: text
+        points: 1
+        regex: ^0*11$
+        hint: "Correct answer: 0011"
+      - title: 4
+        type: text
+        points: 1
+        regex: ^0*100$
+        hint: "Correct answer: 0100"
+      - title: 5
+        type: text
+        points: 1
+        regex: ^0*101$
+        hint: "Correct answer: 0101"
