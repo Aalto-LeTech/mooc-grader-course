@@ -12,3 +12,4 @@ node_modules/
 *.sublime-project
 *.sublime-workspace
 
+_build/
