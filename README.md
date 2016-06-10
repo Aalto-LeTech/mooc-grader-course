@@ -8,5 +8,5 @@ according the same settings.
 Content and grading of each exercise is configured in a
 separate exercise file. See documentation at
 
-https://github.com/Aalto-LeTech/mooc-grader/tree/master/exercises
+https://github.com/Aalto-LeTech/mooc-grader/tree/master/courses
 
