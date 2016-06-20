@@ -1,51 +1,93 @@
 Luku 0
 ======
 
-Tässä mennään.
+Graded questionnaire
+--------------------
 
-.. questionnaire:: 1 A5
-  :submissions: 6
+.. questionnaire:: 1 A50
+  :submissions: 4
+  :points-to-pass: 0
 
-  Ylimääräisiä **ohjeita** ja silleen.
+  This is a questionnaire number 1 that gives at maximum 50 points
+  in category A. Students can make at most 4 submissions.
+  This exercise is marked passed when 0 points is reached (the default).
 
-  .. code-block:: none
+  .. pick-one:: 10
 
-    6 / 10.0 + 6.0 / 10 + 6 / 10
+    What is 1+1?
 
-  .. pick-one:: 3
+    a. 1
+    *b. 2
+    c. 3
 
-    Valitse vaihtoehdoista *paras*!
+    !b § Count again!
+    c § Too much
 
-    a.  Hyvä.
-    b.  *Loistava*.
-    c.  Hieno.
-    *d. Upea.
-    e.  *Kiva*.
+  (Hints can be included or omitted in any question.)
 
-    !d § Kyllä on vielä parempi.
-    b  § *Melkein*.
-    e  § Buu.
+  .. pick-any:: 10
 
-  .. pick-any:: 2
+    Pick two **first**.
 
-    Valitse kaikki oikeat vaihtoehdot.
+    *a. this is **first**
+    *b. this is **second**
+    c. this is **third**
 
-    *a. Oikein
-    *b. Jee
-    c.  Nou!
+  .. freetext:: 30 string-ignorews-ignorequotes
+    :length: 10
 
-Siinä se oli. Ja sitten vielä palautetta.
+    A textual input can be compared with the model as int, float or string.
+    Fourth option is regexp which takes the correct answer as a regular
+    expression. Strings have comparison modifiers that are separated with hyphen.
 
-Palaute
--------
+    * ignorews: ignore white space (applies to regexp too)
+    * ignorequotes: iqnore "quotes" around
+    * requirecase: require identical lower and upper cases
+    * ignorerepl: ignore REPL prefixes
+
+    Here the correct answer is "test".
+
+    test
+    !test § Follow the instruction.
+
+
+Feedback questionnaire
+----------------------
 
 .. questionnaire::
-  :weekly-feedback:
+  :feedback:
+
+  What do you think now?
 
   .. freetext::
+    :required:
     :length: 100
-    :height: 8
-    :main-feedback:
+    :height: 4
+    :class: my-input-class
 
-    Voit lähettää palautetta normaaliin tapaan, mutta se on viikkokoosteen
-    osalta täysin vapaaehtoista.
+  .. agree-group::
+
+    .. agree-item:: Did it work for you?
+
+
+Submit an exercise
+------------------
+
+These type of exercises are configured separately for mooc-grader.
+The directive will attach the exercise at this position.
+
+.. submit:: 2 A100
+  :submissions: 100
+  :config: exercises/hello_python/config.yaml
+
+
+Submit a remote exercise
+------------------------
+
+This exercise opens an external tool via LTI launch protocol.
+
+.. submit:: 3 B50
+  :url: https://rubyric.com/edge/exercises/111/lti
+  :lti: Rubyric+
+  :lti_context_id: asdasd
+  :lti_resource_link_id: asdasd
