@@ -14,7 +14,11 @@ Graded questionnaire
 
   .. pick-one:: 10
 
-    What is 1+1?
+    What is 1+1? The next block presents a program to calculate this.
+
+    .. code-block:: none
+
+      var value = 1 + 1
 
     a. 1
     *b. 2
