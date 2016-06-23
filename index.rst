@@ -1,7 +1,8 @@
-This is a course
-================
+Sample Course
+=============
 
 .. toctree::
-   :maxdepth: 2
+  :maxdepth: 2
 
-   kierros01/kierros01
+  module01/index
+  module02/index
