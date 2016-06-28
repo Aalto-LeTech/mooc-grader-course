@@ -1,11 +1,9 @@
-Kierros 1 (DL 01.09.2016 keskipäivällä)
----------------------------------------
+Module 2 (DL 01.06.2020 23:59)
+------------------------------
 
-..
-  .. aplusmeta::
-      :open_time: 2016-06-01 08:00
+.. aplusmeta::
+  :open-time: 2016-06-08 08:00
 
 .. toctree::
 
-    luku00
-    luku01
+    chapter01

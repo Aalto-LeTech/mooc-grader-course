@@ -1,97 +1,36 @@
-Luku 0
-======
+Other exercise types
+====================
 
-Graded questionnaire
---------------------
+This repository includes several examples of different exercise configurations.
+They are placed below.
 
-.. questionnaire:: 1 A50
-  :submissions: 4
-  :points-to-pass: 0
+.. submit:: 1 5
+  :config: exercises/async_post/config.yaml
 
-  This is a questionnaire number 1 that gives at maximum 50 points
-  in category A. Students can make at most 4 submissions.
-  This exercise is marked passed when 0 points is reached (the default).
+.. submit:: 2 5
+  :config: exercises/custom_post/config.yaml
 
-  .. pick-one:: 10
-
-    What is 1+1? The next block presents a program to calculate this.
-
-    .. code-block:: none
-
-      var value = 1 + 1
-
-    a. 1
-    *b. 2
-    c. 3
-
-    !b § Count again!
-    c § Too much
-
-  (Hints can be included or omitted in any question.)
-
-  .. pick-any:: 10
-
-    Pick two **first**.
-
-    *a. this is **first**
-    *b. this is **second**
-    c. this is **third**
-
-  .. freetext:: 30 string-ignorews-ignorequotes
-    :length: 10
-
-    A textual input can be compared with the model as int, float or string.
-    Fourth option is regexp which takes the correct answer as a regular
-    expression. Strings have comparison modifiers that are separated with hyphen.
-
-    * ignorews: ignore white space (applies to regexp too)
-    * ignorequotes: iqnore "quotes" around
-    * requirecase: require identical lower and upper cases
-    * ignorerepl: ignore REPL prefixes
-
-    Here the correct answer is "test".
-
-    test
-    !test § Follow the instruction.
-
-
-Feedback questionnaire
-----------------------
-
-.. questionnaire::
-  :feedback:
-
-  What do you think now?
-
-  .. freetext::
-    :required:
-    :length: 100
-    :height: 4
-    :class: my-input-class
-
-  .. agree-group::
-
-    .. agree-item:: Did it work for you?
-
-
-Submit an exercise
-------------------
-
-These type of exercises are configured separately for mooc-grader.
-The directive will attach the exercise at this position.
-
-.. submit:: 2 A100
-  :submissions: 100
+.. submit:: 3 5
   :config: exercises/hello_python/config.yaml
 
+.. submit:: 4 5
+  :config: exercises/hello_scala/config.yaml
 
-Submit a remote exercise
-------------------------
+.. submit:: 5 5
+  :config: exercises/hello_git.yaml
 
-This exercise opens an external tool via LTI launch protocol.
+.. submit:: 6 5
+  :config: exercises/randomized_choice.yaml
 
-.. submit:: 3 B50
-  :url: https://rubyric.com/edge/exercises/111/lti
-  :lti: Rubyric+
-  :lti_context_id: asdasd
-  :lti_resource_link_id: asdasd
+.. submit:: 7 5
+  :config: exercises/template.yaml
+
+
+The following exercises should result in an error on submit
+-----------------------------------------------------------
+
+.. submit:: 8 5
+  :config: exercises/intentional_errors/error.yaml
+
+.. submit:: 9 5
+  :config: exercises/intentional_errors/timeout.yaml

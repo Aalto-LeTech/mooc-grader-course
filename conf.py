@@ -18,8 +18,8 @@ import os
 
 
 # -- Aplus configuration --------------------------------------------------
-course_open_date = '2016-01-01'
-course_close_date = '2017-01-01'
+course_open_date = '2016-06-01'
+course_close_date = '2020-06-06'
 questionnaire_default_submissions = 5
 program_default_submissions = 10
 use_wide_column = True
@@ -80,7 +80,7 @@ release = '0.1'
 #
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
-language = 'fi'
+language = 'en'
 
 # There are two options for replacing |today|: either, you set today to some
 # non-false value, then it is used:
