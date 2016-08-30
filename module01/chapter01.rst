@@ -84,3 +84,10 @@ the default submissions limit and poits-to-pass may be overridden.
 Notice that in the last exercise the feedback is always presented in a
 dialog. This is good for exercises that receive much longer feedback
 than the original submission form.
+
+Testing internal and external links
+-----------------------------------
+
+This creates a link to :doc:`another chapter </module02/chapter01>`.
+Also `external resources <http://www.google.fi>`_ can be linked
+without rst-tools interfering.
