@@ -51,6 +51,10 @@ help:
 clean:
 	rm -rf $(BUILDDIR)/*
 
+.PHONY: touchrst
+touchrst:
+	find . -name "*.rst" -exec touch {} \;
+
 .PHONY: html
 html:
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
