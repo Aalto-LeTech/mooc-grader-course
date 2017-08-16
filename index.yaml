@@ -1,6 +1,6 @@
 ---
-name: Sample course with personalized exercises
-description: This is a sample course with some examples of personalized exercises for testing and studying the grader.
+name: A sample course
+description: This is a sample course for testing and studying the grader.
 
 # The course default language which may be overridden with ?lang=xx.
 # Currently internal mooc-grader exercise messages support en and fi.
@@ -88,17 +88,6 @@ modules:
         type: programming
       - key: timeout
         config: exercises/intentional_errors/timeout.yaml
-        type: programming
-
-  - key: personalizedround
-    name: Personalized round
-    type: normal
-    children:
-      - key: personalizednumber
-        config: exercises/personalized_number/config.yaml
-        type: programming
-      - key: personalizedpython
-        config: exercises/personalized_python/config.yaml
         type: programming
 
 # A+ exercise categories.
